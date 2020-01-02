@@ -12,28 +12,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("homepage")
 public class HomepageController {
-
-
-    //社区跳转
-    @RequestMapping("/community")
-    public String community(){
-        return "community";
-    }
-    //头条跳转
-    @RequestMapping("/news")
-    public String news(){
-        return "news";
-    }
-    //战场
-    @RequestMapping("/battle")
-    public String battle(){
-        return "battle";
-    }
-    //我
     @RequestMapping("/my")
-    public String my(){
+    public String record(){
         return "my";
     }
+    @RequestMapping("/work")
+    public String clas(){
+        return "work";
+    }
+    @RequestMapping("/classification")
+    public String my(){
+        return "classification";
+    }
+    @RequestMapping("/back")
+    public String back(){return "homepage";}
 
 
 

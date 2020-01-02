@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html  xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8" />
     <!-- <meta http-equiv="Content-Type" content="text/html" /> -->
     <meta name="keyword" content="HTML, CSS, image, navigation" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>MutekiGamer - Login</title>
-    <link rel="stylesheet" type="text/css" href="./static/css/index.css" />
-    <link rel="stylesheet" type="text/css" href="./static/css/Login.css" />
+    <base th:href="@{/}">
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="css/login.css"/>
     <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js">  </script>
     <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -23,24 +24,23 @@
                 </span>
         </div>
         <div class="nav-text">
-            <span style="float: left"><a href="HomePage.html">Home</a></span>
-            <span style="float: left"><a href="BBSIndex.html">BBS</a></span>
-            <span style="float: left"><a href="">Games</a></span>
-            <span style="float: left"><a href="">News</a></span>
-            <span style="float: left"><a href="">My</a></span>
+            <span style="float: left"><a href="HomePage">主页</a></span>
+            <span style="float: left"><a href="/homepage/class">课程</a></span>
+            <span style="float: left"><a href="/homepage/record">成绩</a></span>
+            <span style="float: right"><a href="/homepage/my">我</a></span>
             <span class="user">
-                    <a href="Login.html">Login</a>
+                    <a href="login">Login</a>
                 </span>
         </div>
     </div>
 </div>
 <div class="clear"></div>
 <!--video-->
-<div>
-    <video autoplay loop muted style="width: 100%;height: auto;">
-        <source src="https://cms.cnc.blzstatic.cn/cms/gallery/s1/S199GBA7HG581572581461800.mp4" type="video/mp4">
-    </video>
-</div>
+<!--<div>-->
+<!--<video autoplay loop muted style="width: 100%;height: auto;">-->
+<!--<source src="https://cms.cnc.blzstatic.cn/cms/gallery/s1/S199GBA7HG581572581461800.mp4" type="video/mp4">-->
+<!--</video>-->
+<!--</div>-->
 <!-- body -->
 <div class="main-body">
     <div class="logContext">

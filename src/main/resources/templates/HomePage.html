@@ -1,40 +1,39 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head >
-    <meta charset="utf-8" />
+<head>
+    <meta charset="utf-8"/>
     <!-- <meta http-equiv="Content-Type" content="text/html" /> -->
-    <meta name="keyword" content="HTML, CSS, image, navigation" />
+    <meta name="keyword" content="HTML, CSS, image, navigation"/>
     <title>VULCAN! - HomePage</title>
     <base th:href="@{/}">
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <link rel="stylesheet" type="text/css" href="css/homePage.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="css/homePage.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js">  </script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
-    <script type="text/javascript" th:src="@{/js/Homepage.js}"></script>
-
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" th:src="@{/js/myinfo.js}"></script>
 </head>
 
 <body>
 <!-- Navigation Bar-->
 <div class="barContainer">
-    <div class="nav-content" >
+    <div class="nav-content">
         <div class="nav-title">
                 <span>
-                    <img src="https://static.dingtalk.com/media/lALPDgQ9rZl6KXPNAljNB0Q_1860_600.png?auth_bizType=IM&auth_bizEntity=%7B%22cid%22%3A%228737273277%22%2C%22msgId%22%3A%222028145409841%22%7D&bizType=im&open_id=267508618" alt="MutekiGamer logo">
+                    <img src="https://static.dingtalk.com/media/lALPDgQ9rZl6KXPNAljNB0Q_1860_600.png?auth_bizType=IM&auth_bizEntity=%7B%22cid%22%3A%228737273277%22%2C%22msgId%22%3A%222028145409841%22%7D&bizType=im&open_id=267508618"
+                         alt="MutekiGamer logo">
                 </span>
         </div>
         <div class="nav-text">
             <span style="float: left"><a href="/homepage">主页</a></span>
-            <span style="float: right"><a href="/homepage/my">搜索</a></span>
+            <span style="float: left"><a href="/homepage/work">工作台</a></span>
+            <span style="float: left"><a href="/homepage/classification">分类</a></span>
+            <span style="float: right"><a href="/homepage/my">我</a></span>
             <span class="user">
                     <a href="login">Login</a>
                 </span>
@@ -42,18 +41,35 @@
     </div>
 </div>
 
-
-
-<div class="main-body" style="margin-top: 0px;padding-top: 0px;" id="main_container">
-    <div style="padding-left: 10%;opacity: 0.8;" >
+<div class="main-body" style="margin-top: 0px;padding-top: 0px;">
+    <div style="padding-left: 10%;opacity: 0.8;">
         <div id="demo" class="carousel slide" data-ride="carousel" style="width: 90%;height: 90%;">
             <!-- 指示符 -->
-            <ul class="carousel-indicators" id="indicator_container">
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+                <li data-target="#demo" data-slide-to="3"></li>
             </ul>
 
             <!-- 轮播图片 -->
-            <div class="carousel-inner" id="banner_container">
-
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href="https://www.jianshu.com/p/ad8dbbc313b7?utm_medium=index-banner&utm_source=desktop">
+                        <img src="https://upload.jianshu.io/admin_banners/web_images/4854/0eef040afc0ba407458fb900cee841df8d5274cb.png?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540"></a>
+                </div>
+                <div class="carousel-item">
+                    <a href="https://www.icourse163.org/topics/cet462020_w/">
+                        <img src="https://upload.jianshu.io/admin_banners/web_images/4860/8aec44af6460ad75f6bb56caa9ab501c0cfb2ba4.png?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540"></a>
+                </div>
+                <div class="carousel-item">
+                    <a href="https://www.icourse163.org/course/SCU-1205898801">
+                        <img src="https://edu-image.nosdn.127.net/5755cf56796b4dca8d2aad28b3789e95.jpg?imageView&quality=100"></a>
+                </div>
+                <div class="carousel-item">
+                    <a href="https://www.icourse163.org/columns/1207549208.htm"> <img
+                            src="https://edu-image.nosdn.127.net/536db2465f974c6599e1adaa0a7163bc.jpg?imageView&quality=100"></a>
+                </div>
             </div>
 
             <!-- 左右切换按钮 -->
@@ -66,63 +82,75 @@
         </div>
     </div>
 
-    <div class="main-content">
-        <div class="contextFrame">
-            <div class="innerFrame" >
-                <ul id="article_container">
-                    <!--<li class="list-group-item list-group-item-warning">
-    <div>
-                           <div class="post_item"  >
-                               <div class="post_item2" >
-                                    <h3 class="post_username">rick</h3>
-                                    <div class="post_content">
-                                        <h3>守望先锋</h3>
-                                         <b>我喜欢守望先锋</b>
-                               </div>
-                           </div>
-                           </div>
-                       </div>
-                       <button  id= "list1">this is a fucking button</button>
-                       </li><li class="list-group-item list-group-item-warning">
-    <div>
-                           <div class="post_item"  >
-                               <div class="post_item2" >
-                                    <h3 class="post_username">rick</h3>
-                                    <div class="post_content">
-                                        <h3>炉石传说</h3>
-                                         <b>我喜欢炉石传说</b>
-                               </div>
-                           </div>
-                           </div>
-                       </div>
-                       <button  id= "list2">this is a fucking button</button>
-                       </li>-->
+    <div class="main-content" style="z-index: 99;height: 800px">
+        <div class="contextFrame" style="height: 100%;">
+            <div class="innerFrame"style="height: 100%">
+                <ul class="nav nav-pills" role="tablist"style="width: 80%;padding-left: 5px">
+                    <li class="nav-item" style="background-color: dimgrey;width: 15%">
+                        <a class="nav-link active" data-toggle="pill" href="#home">最近使用</a>
+                    </li>
+                    <li class="nav-item" style="background-color: dimgrey;width: 15%">
+                        <a class="nav-link" data-toggle="pill" href="#menu1">我的创建</a>
+                    </li>
+                    <li class="nav-item" style="background-color: dimgrey;width: 15%">
+                        <a class="nav-link" data-toggle="pill" href="#menu2">我的收藏</a>
+                    </li>
                 </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content" style="height: 100%;">
+                    <div id="home" class="container tab-pane active"><br>
+                        <ul style="height: auto">
+                            <li>
+                                <div class="card" style="width: 80%; padding-left: 5px;background-color: #ABABAB">
+                                    <div class="card-header"><a href="https://www.jianshu.com/p/0f5be015314d">Flutter可能成为未来的前端解决方案</a></div>
+                                    <div class="card-body">
+                                        <p>完善可以让 Flutter 可以运行在 Web 平台的 Hummingbird 项目；
+                                        继续尝试让 Flutter 运行在桌面级的平台之上（如 macOS 和 Windows）。
+                                        假如flutter支持web，windows，macOS，这简直无敌有没有
+                                        </p>
+                                    </div>
+                                    <div class="card-footer">2019.02.24 00:04:03        字数  386      阅读 3,409</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="card"style="width: 80%; padding-left: 5px;background-color: #ABABAB">
+                                    <div class="card-header"><a href="https://www.jianshu.com/p/3adb756b2974" >豆瓣9.2分，今年最牛逼的电影，没白等！</a></div>
+                                    <div class="card-body">
+                                        <p>
+                                            最近这部电影很火，前几天公众号推荐过一次，但是后台仍一堆人求这部电影，今天再推荐一遍。
+                                            里面一些镜头让我一个大男人看的都热泪盈眶，很值得一看！
+
+                                        </p>
+                                    </div>
+                                    <div class="card-footer">2019.12.03 13:13:49      字数  1,818     阅读 56,643</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="card"style="width: 80%; padding-left: 5px;background-color: #ABABAB">
+                                    <div class="card-header"><a href="https://www.jianshu.com/p/44095f2e9615" >预见2020：最新发布IT技术的发展趋势</a></div>
+                                    <div class="card-body">
+                                        <p>
+                                            在IT领域，企业领导者在IT领域做出的选择不仅会对业务发展和客户关系产生影响，也会对整体经济产生影响，
+                                            而整体经济越来越依赖于为关键业务提供可靠服务的企业网络。
+                                        </p>
+                                    </div>
+                                    <div class="card-footer">2020.01.02 15:17:05     字数  1,525       阅读 68,937</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="menu1" class="container tab-pane fade"><br>
+                        直接复制上面ul的内容
+                    </div>
+                    <div id="menu2" class="container tab-pane fade"><br>
+                        直接复制上面ul的内容
+                    </div>
+                </div>
             </div>
-
         </div>
-        <div class="division"></div>
-        <div class="division"></div>
-        <div class="division"></div>
-
     </div>
 </div>
-
-
-
-<div class="fixed-action-btn">
-    <a class="btn-floating btn-large red">
-        <i class="large material-icons">mode_edit</i>
-    </a>
-    <ul>
-        <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-        <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-        <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-        <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
-    </ul>
-</div>
-
-
 
 <footer>
     <div class="container">
@@ -166,162 +194,6 @@
     </div>
 </footer>
 
-<script type="text/javascript">
-    var slideIndex = 0;
-    showSlides();
-
-    function showSlides() {
-        var i;
-        var slides = document.getElementsByClassName("mySlides");
-        var dots = document.getElementsByClassName("dot");
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) {slideIndex = 1}
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex-1].style.display = "block";
-        dots[slideIndex-1].className += " active";
-        setTimeout(showSlides, 2000); // Change image every 2 seconds
-    }
-</script>
-
-<script>
-    let my=document.getElementById("my");
-    my.onclick=function () {
-        myinfo(function (result) {
-            let p=template("myinfo",result.post);
-            $('#aaa').html(p);
-
-        })
-    };
-
-</script>
-<script id="myinfo" type="text/html">
-    {{each data value index}}
-    <li>{{value.content}}------{{value.title}}</li>
-    {{/each}}
-</script>
-
-
-<script type="text/javascript">
-
-    // $('#main_container').onload = function () {
-    homepage(function (result) {
-
-        //执行
-        let _post_html = "";
-        let _banner_html = "";
-        let _indicator_html = "";
-        let colorArray = ["list-group-item-success","list-group-item-secondary","list-group-item-info","list-group-item-warning","list-group-item-primary","list-group-item-primary","list-group-item-primary"];
-
-        //foreach banner
-        for(let i = 0;i<result.banner.length;i++){
-
-            console.log(result);
-
-            let contentUrl = result.banner[i].bannerContentId;
-            let imgUrl = result.banner[i].bannerPicId;
-
-            console.log(result.post.data);
-            //todo title uncaught
-
-            if(i == 0){
-                _banner_html += "  <div class=\"carousel-item active\">\n" +
-                    "                    <a href=\"" + contentUrl + "\">\n" +
-                    "                        <img src=\"" + imgUrl + "\">\n" +
-                    "                    </a>\n" +
-                    "              </div>\n";
-                _indicator_html += " <li data-target=\"#demo\" data-slide-to=\""+i+"\" class=\"active\"></li>"
-            }else {
-                _banner_html += "  <div class=\"carousel-item\">\n" +
-                    "                    <a href=\"" + contentUrl + "\">\n" +
-                    "                        <img src=\"" + imgUrl + "\">\n" +
-                    "                    </a>\n" +
-                    "               </div>\n";
-                _indicator_html += " <li data-target=\"#demo\" data-slide-to=\""+i+"\"></li>";
-            }
-
-
-
-        }
-
-        //foreach post
-
-        for(let i = 0;i<result.post.data.length;i++){
-            let randomId = Math.round(Math.random() * 100) % colorArray.length ;
-            let title = result.post.data[i].title;
-            let poster = result.post.data[i].userName;
-            let content = result.post.data[i].content;
-
-            let listId = "list" + (i + 1);
-
-            _post_html +=
-                "<li class=\"list-group-item "+ colorArray[randomId] + "\"> \n" +
-                "    <div>  \n" +
-                "                           <div class=\"post_item\"  > \n" +
-                "                               <div class=\"post_item2\" >\n" +
-                "                                    <h3 class=\"post_username\">"+poster+"</h3>\n" +
-                "                                    <div class=\"post_content\">\n" +
-                "                                        <h3>"+title+"</h3>\n" +
-                "                                         <b>"+ content+"</b>\n" +
-                "                               </div>\n" +
-                "                           </div>\n" +
-                "                           </div>\n" +
-                "                       </div>\n" +
-                "                       <button  id= \""+listId+"\">this is a fucking button</button>\n" +
-                "                       </li>"
-            ;
-        }
-
-
-        console.log(_banner_html);
-        console.log(_post_html);
-
-        $('#banner_container').html(_banner_html);
-        $('#indicator_container').html(_indicator_html);
-        //todo
-        $('#article_container').html(_post_html);
-
-        //todo 查看帖子
-
-    });
-
-    document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('.fixed-action-btn');
-        var instances = M.FloatingActionButton.init(elems, options);
-    });
-
-    // Or with jQuery
-
-    $(document).ready(function(){
-        $('.fixed-action-btn').floatingActionButton();
-    });
-
-
-
-    document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('.fixed-action-btn');
-        var instances = M.FloatingActionButton.init(elems, options);
-    });
-
-    // Or with jQuery
-
-    $(document).ready(function(){
-        $('.fixed-action-btn').floatingActionButton();
-    });
-
-
-    // }
-</script>
-
-
-
-
 
 </body>
 </html>
-<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
