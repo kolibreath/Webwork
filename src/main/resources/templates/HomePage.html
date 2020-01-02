@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head >
+    <meta charset="utf-8" />
+    <!-- <meta http-equiv="Content-Type" content="text/html" /> -->
+    <meta name="keyword" content="HTML, CSS, image, navigation" />
+    <title>VULCAN! - HomePage</title>
+    <base th:href="@{/}">
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/homePage.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js">  </script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script type="text/javascript" th:src="@{/js/Homepage.js}"></script>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</head>
+
+<body>
+<!-- Navigation Bar-->
+<div class="barContainer">
+    <div class="nav-content" >
+        <div class="nav-title">
+                <span>
+                    <img src="https://static.dingtalk.com/media/lALPDgQ9rZl6KXPNAljNB0Q_1860_600.png?auth_bizType=IM&auth_bizEntity=%7B%22cid%22%3A%228737273277%22%2C%22msgId%22%3A%222028145409841%22%7D&bizType=im&open_id=267508618" alt="MutekiGamer logo">
+                </span>
+        </div>
+        <div class="nav-text">
+            <span style="float: left"><a href="/homepage">主页</a></span>
+            <span style="float: right"><a href="/homepage/my">搜索</a></span>
+            <span class="user">
+                    <a href="login">Login</a>
+                </span>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="main-body" style="margin-top: 0px;padding-top: 0px;" id="main_container">
+    <div style="padding-left: 10%;opacity: 0.8;" >
+        <div id="demo" class="carousel slide" data-ride="carousel" style="width: 90%;height: 90%;">
+            <!-- 指示符 -->
+            <ul class="carousel-indicators" id="indicator_container">
+            </ul>
+
+            <!-- 轮播图片 -->
+            <div class="carousel-inner" id="banner_container">
+
+            </div>
+
+            <!-- 左右切换按钮 -->
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="contextFrame">
+            <div class="innerFrame" >
+                <ul id="article_container">
+
+                </ul>
+            </div>
+
+        </div>
+        <div class="division"></div>
+        <div class="division"></div>
+        <div class="division"></div>
+
+    </div>
+</div>
+
+
+
+<div class="fixed-action-btn">
+    <a class="btn-floating btn-large red">
+        <i class="large material-icons">mode_edit</i>
+    </a>
+    <ul>
+        <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+        <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+        <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+        <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+    </ul>
+</div>
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3 class="footer_title">Product</h3>
+                <ul class="footer_list">
+                    <li>Integrations</li>
+                    <li>Slack Bot</li>
+                    <li>Customers</li>
+                    <li>Case Studies</li>
+                    <li>Pricing</li>
+                </ul>
+            </div>
+            <div class="col">
+                <h3 class="footer_title">Company</h3>
+                <ul class="footer_list">
+                    <li>About</li>
+                    <li>Blog</li>
+                    <li>Newsletter</li>
+                    <li>Community</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+            <div class="col">
+                <h3 class="footer_title">Help</h3>
+                <ul class="footer_list">
+                    <li>Knowledge Base</li>
+                    <li>Forum</li>
+                </ul>
+            </div>
+            <div class="col">
+                <ul style="text-align: right;padding-top: 100px;">
+                    <li><img src="img/twitter.png" style="width: 20px;height: 20px;"></li>
+                    <li><img src="img/facebook.png" style="width: 20px;height: 20px;"></li>
+                    <li><img src="img/email.png" style="width: 20px;height: 20px;"></li>
+                    <li>© MutekiGamer 2019</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript">
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+</script>
+
+<script>
+    let my=document.getElementById("my");
+    my.onclick=function () {
+        myinfo(function (result) {
+            let p=template("myinfo",result.post);
+            $('#aaa').html(p);
+
+        })
+    };
+
+</script>
+<script id="myinfo" type="text/html">
+    {{each data value index}}
+    <li>{{value.content}}------{{value.title}}</li>
+    {{/each}}
+</script>
+
+
+<script type="text/javascript">
+
+    // $('#main_container').onload = function () {
+    homepage(function (result) {
+
+        //执行
+        let _post_html = "";
+        let _banner_html = "";
+        let _indicator_html = "";
+        let colorArray = ["list-group-item-success","list-group-item-secondary","list-group-item-info","list-group-item-warning","list-group-item-primary","list-group-item-primary","list-group-item-primary"];
+
+        //foreach banner
+        for(let i = 0;i<result.banner.length;i++){
+
+            console.log(result);
+
+            let contentUrl = result.banner[i].bannerContentId;
+            let imgUrl = result.banner[i].bannerPicId;
+
+            console.log(result.post.data);
+            //todo title uncaught
+
+            if(i == 0){
+                _banner_html += "  <div class=\"carousel-item active\">\n" +
+                    "                    <a href=\"" + contentUrl + "\">\n" +
+                    "                        <img src=\"" + imgUrl + "\">\n" +
+                    "                    </a>\n" +
+                    "              </div>\n";
+                _indicator_html += " <li data-target=\"#demo\" data-slide-to=\""+i+"\" class=\"active\"></li>"
+            }else {
+                _banner_html += "  <div class=\"carousel-item\">\n" +
+                    "                    <a href=\"" + contentUrl + "\">\n" +
+                    "                        <img src=\"" + imgUrl + "\">\n" +
+                    "                    </a>\n" +
+                    "               </div>\n";
+                _indicator_html += " <li data-target=\"#demo\" data-slide-to=\""+i+"\"></li>";
+            }
+
+
+
+        }
+
+        //foreach post
+
+        for(let i = 0;i<result.post.data.length;i++){
+            let randomId = Math.round(Math.random() * 100) % colorArray.length ;
+            let title = result.post.data[i].title;
+            let poster = result.post.data[i].userName;
+            let content = result.post.data[i].content;
+
+            let listId = "list" + (i + 1);
+
+            _post_html +=
+                "<li class=\"list-group-item "+ colorArray[randomId] + "\"> \n" +
+                "    <div>  \n" +
+                "                           <div class=\"post_item\"  > \n" +
+                "                               <div class=\"post_item2\" >\n" +
+                "                                    <h3 class=\"post_username\">"+poster+"</h3>\n" +
+                "                                    <div class=\"post_content\">\n" +
+                "                                        <h3>"+title+"</h3>\n" +
+                "                                         <b>"+ content+"</b>\n" +
+                "                               </div>\n" +
+                "                           </div>\n" +
+                "                           </div>\n" +
+                "                       </div>\n" +
+                "                       <button  id= \""+listId+"\">this is a fucking button</button>\n" +
+                "                       </li>"
+            ;
+        }
+
+
+        console.log(_banner_html);
+        console.log(_post_html);
+
+        $('#banner_container').html(_banner_html);
+        $('#indicator_container').html(_indicator_html);
+        //todo
+        $('#article_container').html(_post_html);
+
+        //todo 查看帖子
+
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.fixed-action-btn');
+        var instances = M.FloatingActionButton.init(elems, options);
+    });
+
+    // Or with jQuery
+
+    $(document).ready(function(){
+        $('.fixed-action-btn').floatingActionButton();
+    });
+
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.fixed-action-btn');
+        var instances = M.FloatingActionButton.init(elems, options);
+    });
+
+    // Or with jQuery
+
+    $(document).ready(function(){
+        $('.fixed-action-btn').floatingActionButton();
+    });
+
+
+    // }
+</script>
+
+
+
+
+</body>
+</html>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.1/ace.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/editor.css}"/>
+    <script type="text/javascript" th:src="@{/js/Editor.js}"></script>
+    <title>页面编辑器</title>
+</head>
+<body onload="init()">
+<div id="container">
+    <div id="input"></div>
+    <iframe id='target' frameBorder="0"></iframe>
+</div>
+</body>
+</html>
