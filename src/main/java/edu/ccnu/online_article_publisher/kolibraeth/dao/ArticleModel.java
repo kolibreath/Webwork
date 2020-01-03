@@ -4,16 +4,19 @@ public class ArticleModel{
 
     private String title;
     private String content;
-    private String userName;
-    private String userAvatar;
-    private int articleId;
+    private String link;
+    private int wordCount;
+    private String time;
+    private int views;
 
-    public int getArticleId() {
-        return articleId;
-    }
 
-    public void setArticleId(int articleId) {
-        this.articleId = articleId;
+    public ArticleModel(String title, String content, String link, int wordCount, String time, int views) {
+        this.title = title;
+        this.content = content;
+        this.link = link;
+        this.wordCount = wordCount;
+        this.time = time;
+        this.views = views;
     }
 
     public String getTitle() {
@@ -32,27 +35,35 @@ public class ArticleModel{
         this.content = content;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getLink() {
+        return link;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setLink(String link) {
+        this.link = link;
     }
 
-    public String getUserAvatar() {
-        return userAvatar;
+    public int getWordCount() {
+        return wordCount;
     }
 
-    public void setUserAvatar(String userAvatar) {
-        this.userAvatar = userAvatar;
+    public void setWordCount(int wordCount) {
+        this.wordCount = wordCount;
     }
 
-    public ArticleModel(String title, String content, String userName, String userAvatar, int articleId) {
-        this.title = title;
-        this.content = content;
-        this.userName = userName;
-        this.userAvatar = userAvatar;
-        this.articleId = articleId;
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public int getViews() {
+        return views;
+    }
+
+    public void setViews(int views) {
+        this.views = views;
     }
 }

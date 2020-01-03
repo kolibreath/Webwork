@@ -30,27 +30,19 @@ public class  ArticleController {
 
     @Autowired
     private ArticleRepo articleRepo;
-    @Autowired
-    private UserRepo userRepo;
-
 
     @RequestMapping(value = "/all")
     public ResultBean getAllArticle(){
         List<Article> articles = articleRepo.findAll();
-
-
         List<ArticleModel> articleModels = new LinkedList<>();
         for(Article article : articles) {
-            int userId = article.getUserId();
-            User user = userRepo.findUserByUserId(userId);
-            String userName = user.getUserName();
-            int subStringLenghth = article.getContent().length()> 20 ? 20: article.getContent().length();
             ArticleModel articleModel = new ArticleModel(
-                    article.getTitle()
-                    , article.getContent().substring(0, subStringLenghth),
-                    userName,
-                    user.getUserAvatar(),
-                    article.getPostId()
+                    article.getTitle(),
+                    article.getContent(),
+                    article.getLink(),
+                    article.getWordCount(),
+                    article.getTime(),
+                    article.getViews()
             );
             articleModels.add(articleModel);
         }
@@ -79,9 +71,11 @@ public class  ArticleController {
         }
         if(postContent == null || postTitle == null)
             return ResultBean.error(ResultBean.resources_not_found,"没有输入文章内容或者文章标题");
-        Article post = new Article(userId,groupId,time,postTitle,postContent);
-        articleRepo.save(post);
-        return ResultBean.success(post);
+
+        //todo 时间
+//        Article post = new Article(userId,groupId,"",postTitle,postContent);
+//        articleRepo.save(post);
+        return ResultBean.success(null);
     }
 
 

@@ -18,7 +18,7 @@ public class Article {
     private int groupId;
 
     @Column
-    private Long time;
+    private String time;
 
     @Column
     private String title;
@@ -26,23 +26,61 @@ public class Article {
     @Column
     private String content;
 
+    @Column
+    private String link;
+
+    @Column
+    private int wordCount;
+
+    @Column
+    private int views;
+
+
+    public int getViews() {
+        return views;
+    }
+
+    public void setViews(int views) {
+        this.views = views;
+    }
+
+    public int getWordCount() {
+        return wordCount;
+    }
+
+    public void setWordCount(int wordCount) {
+        this.wordCount = wordCount;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
     public Article(){
     }
 
-    public Long getTime() {
+
+    public String getTime() {
         return time;
     }
 
-    public void setTime(Long time) {
+    public void setTime(String time) {
         this.time = time;
     }
 
-    public Article(int userId, int groupId, long time, String title, String content) {
+    public Article(int userId, int groupId, String time, String title, String content, String link, int wordCount, int views) {
         this.userId = userId;
         this.groupId = groupId;
         this.time = time;
         this.title = title;
         this.content = content;
+        this.link = link;
+        this.wordCount = wordCount;
+        this.views = views;
     }
 
     public int getPostId() {

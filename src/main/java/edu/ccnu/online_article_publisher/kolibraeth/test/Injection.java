@@ -44,21 +44,26 @@ public class Injection {
         groupRepo.save(group);
 
 
-        Article article = new Article(
-                rick.getUserId(),
-                group.getGroupId(),
-                System.currentTimeMillis(),
-                "守望先锋",
-                "我喜欢守望先锋");
+        Article article = new Article(rick.getUserId(),group.getGroupId(),"2019.02.24 00:04:03"
+                ,"Flutter 精解",
+                "完善可以让 Flutter 可以运行在 Web 平台的 Hummingbird 项目；\n" +
+                "继续尝试让 Flutter 运行在桌面级的平台之上（如 macOS 和 Windows）。\n" +
+                "假如flutter支持web，windows，macOS，这简直无敌有没有....",
+                "https://www.jianshu.com/p/0f5be015314d",386,3409);
         articleRepo.save(article);
 
         Article article2 = new Article(
-                rick.getUserId(),
-                group.getGroupId(),
-                System.currentTimeMillis(),
-                "炉石传说",
-                "我喜欢炉石传说");
+                rick.getUserId(),group.getGroupId(),"2019.12.03 13:13:49","豆瓣9.2分，今年最牛逼的电影，没白等！",
+                "最近这部电影很火，前几天公众号推荐过一次，但是后台仍一堆人求这部电影，今天再推荐一遍。\n,里面一些镜头让我一个大男人看的都热泪盈眶，很值得一看！",
+                "https://www.jianshu.com/p/3adb756b2974",1818,37873 );
         articleRepo.save(article2);
+
+        Article article3 = new Article(
+                rick.getUserId(),group.getGroupId(),"2019.12.03 13:13:49","豆瓣9.2分，今年最牛逼的电影，没白等！",
+                "最近这部电影很火，前几天公众号推荐过一次，但是后台仍一堆人求这部电影，今天再推荐一遍。\n,里面一些镜头让我一个大男人看的都热泪盈眶，很值得一看！",
+                "https://www.jianshu.com/p/3adb756b2974",1992,6375 );
+        articleRepo.save(article3);
+
 
         Banner banner1 = new Banner(
                 "https://upload.jianshu.io/admin_banners/web_images/4860/8aec44af6460ad75f6bb56caa9ab501c0cfb2ba4.png?imageMogr2/auto-orient/strip"

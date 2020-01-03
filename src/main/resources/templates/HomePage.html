@@ -16,7 +16,7 @@
     <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" th:src="@{/js/myinfo.js}"></script>
+    <script type="text/javascript" th:src="@{/js/homepage.js}"></script>
 </head>
 
 <body>
@@ -100,19 +100,7 @@
                 <!-- Tab panes -->
                 <div class="tab-content" style="height: 100%;">
                     <div id="home" class="container tab-pane active"><br>
-                        <ul style="height: auto">
-                            <li>
-                                <div class="card" style="width: 80%; padding-left: 5px;background-color: #ABABAB">
-                                    <div class="card-header"><a href="https://www.jianshu.com/p/0f5be015314d">Flutter可能成为未来的前端解决方案</a></div>
-                                    <div class="card-body">
-                                        <p>完善可以让 Flutter 可以运行在 Web 平台的 Hummingbird 项目；
-                                        继续尝试让 Flutter 运行在桌面级的平台之上（如 macOS 和 Windows）。
-                                        假如flutter支持web，windows，macOS，这简直无敌有没有
-                                        </p>
-                                    </div>
-                                    <div class="card-footer">2019.02.24 00:04:03        字数  386      阅读 3,409</div>
-                                </div>
-                            </li>
+                        <ul style="height: auto" id="post_container">
                             <li>
                                 <div class="card"style="width: 80%; padding-left: 5px;background-color: #ABABAB">
                                     <div class="card-header"><a href="https://www.jianshu.com/p/3adb756b2974" >豆瓣9.2分，今年最牛逼的电影，没白等！</a></div>
@@ -194,6 +182,51 @@
     </div>
 </footer>
 
-
 </body>
+
+
+<!--<li>-->
+<!--<div class="card" style="width: 80%; padding-left: 5px;background-color: #ABABAB">-->
+<!--<div class="card-header"><a href="https://www.jianshu.com/p/0f5be015314d">Flutter可能成为未来的前端解决方案</a></div>-->
+<!--<div class="card-body">-->
+<!--<p>完善可以让 Flutter 可以运行在 Web 平台的 Hummingbird 项目；-->
+<!--继续尝试让 Flutter 运行在桌面级的平台之上（如 macOS 和 Windows）。-->
+<!--假如flutter支持web，windows，macOS，这简直无敌有没有-->
+<!--</p>-->
+<!--</div>-->
+<!--<div class="card-footer">2019.02.24 00:04:03        字数  386      阅读 3,409</div>-->
+<!--</div>-->
+<!--</li>-->
+
+<script type="text/javascript">
+    homepage(function (data) {
+
+        let _html = "";
+        let post = data.post.data;
+        alert(post.length);
+        for (let i = 0; i <  post.length; i++) {
+            let title = post[i].title;
+            let content = post[i].content;
+            let link = post[i].link;
+            let time = post[i].time;
+            let workcount = post[i].wordCount;
+            let views = post[i].views;
+
+            console.log("标题  内容 连接 时间 字数  阅读量 " + title + " " + content+ " "  + link+ " " + time+ " " + workcount+ " " +views );
+
+            _html += "<li>\n" +
+                "    <div class=\"card\" style=\"width: 80%; padding-left: 5px;background-color: #ABABAB\">\n" +
+                "        <div class=\"card-header\"><a href=\"" + link+ "\">"+ title +"</a></div>\n" +
+                "        <div class=\"card-body\">\n" +
+                "            <p>"+ content +"</p>\n" +
+                "        </div>\n" +
+                "        <div class=\"card-footer\">" +  time + "         " + "字数    " +  workcount     + "阅读     " + views + "</div>\n" +
+                "    </div>\n" +
+                "</li>";
+        }
+        alert(data.banner.data.length);
+        $("#post_container").html(_html);
+        console.log(_html);
+    });
+</script>
 </html>
