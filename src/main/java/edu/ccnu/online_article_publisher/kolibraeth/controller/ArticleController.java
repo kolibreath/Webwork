@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
+import javax.xml.transform.Result;
 import java.util.Map;
 
 
@@ -91,5 +92,19 @@ public class  ArticleController {
         }
        articleRepo.deleteById(postId);
         return 200;
+    }
+
+    @RequestMapping("/my_post")
+    public ResultBean getMyPost(HttpSession httpSession){
+        UserSession userSession= (UserSession) httpSession.getAttribute(Constants.USE_SESSION_KEY);
+        int userId = userSession.getId();
+        List<Article> myPosts = new LinkedList<>();
+        try{
+            myPosts = articleRepo.findByUserId(userId);
+            return ResultBean.success(myPosts);
+        }catch (Exception e){
+            return ResultBean.error(ResultBean.resources_not_found,"暂无内容");
+        }
+
     }
 }

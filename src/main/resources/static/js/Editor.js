@@ -1,5 +1,6 @@
-function generate(){
-    let idoc = document.getElementById('target').contentWindow.document;
+function generate() {
+    var idoc = document.getElementById('target').contentWindow.document;
+
     idoc.open();
     //var input = document.getElementById('input');
     //idoc.write(input.value);
@@ -7,11 +8,20 @@ function generate(){
     idoc.close();
 }
 
-function init(){
+function init() {
+    console.log(`function init`)
+    /*var input = document.getElementById('input');
+
+    input.addEventListener('keyup',()=>{
+        //console.log('src changed');
+        generate();
+    });*/
+
     window.editor = ace.edit("input");
     editor.setTheme("ace/theme/monokai");
     editor.getSession().setMode("ace/mode/html");
-    editor.setValue(`<!DOCTYPE html><html>
+    editor.setValue(`<!DOCTYPE html>
+<html>
 <head>
 </head>
 
@@ -37,4 +47,6 @@ function init(){
 
     editor.setShowPrintMargin(false);
     editor.setBehavioursEnabled(false);
+
+
 }
