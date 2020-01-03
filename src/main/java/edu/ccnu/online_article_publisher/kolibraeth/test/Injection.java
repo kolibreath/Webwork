@@ -40,6 +40,23 @@ public class Injection {
 
         userRepo.save(rick);
 
+        User  morty = new User(
+                "morty@morty.com",
+                "morty",
+                "mortypass",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx-GmdvA4AFYUn6vRJHGYcdIvCvsQuuNOxNDR6Rqr2O9USO4Gc&s");
+
+        userRepo.save(morty);
+
+
+        User  summer = new User(
+                "summer@summer.com",
+                "summer",
+                "summerpass",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx-GmdvA4AFYUn6vRJHGYcdIvCvsQuuNOxNDR6Rqr2O9USO4Gc&s");
+
+        userRepo.save(summer);
+
         ArticleGroup group = new ArticleGroup("rick's favorite",rick.getUserId());
         groupRepo.save(group);
 
@@ -53,14 +70,14 @@ public class Injection {
         articleRepo.save(article);
 
         Article article2 = new Article(
-                rick.getUserId(),group.getGroupId(),"2019.12.03 13:13:49","豆瓣9.2分，今年最牛逼的电影，没白等！",
+                morty.getUserId(),group.getGroupId(),"2019.12.03 13:13:49","豆瓣9.2分，今年最牛逼的电影，没白等！",
                 "最近这部电影很火，前几天公众号推荐过一次，但是后台仍一堆人求这部电影，今天再推荐一遍。\n,里面一些镜头让我一个大男人看的都热泪盈眶，很值得一看！",
                 "https://www.jianshu.com/p/3adb756b2974",1818,37873 );
         articleRepo.save(article2);
 
         Article article3 = new Article(
-                rick.getUserId(),group.getGroupId(),"2019.12.03 13:13:49","豆瓣9.2分，今年最牛逼的电影，没白等！",
-                "最近这部电影很火，前几天公众号推荐过一次，但是后台仍一堆人求这部电影，今天再推荐一遍。\n,里面一些镜头让我一个大男人看的都热泪盈眶，很值得一看！",
+                summer.getUserId(),group.getGroupId(),"2019.12.03 13:13:49","这是一个好看的程序！",
+                "最近这部电影很火，前几天公众男人看的都热泪盈眶，很值得一看！",
                 "https://www.jianshu.com/p/3adb756b2974",1992,6375 );
         articleRepo.save(article3);
 

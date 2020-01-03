@@ -25,6 +25,7 @@ import java.util.Map;
 /**
  * 发帖 删帖 回复帖子 等
  */
+@SuppressWarnings("ALL")
 @RestController
 @RequestMapping("post")
 public class  ArticleController {
@@ -61,22 +62,14 @@ public class  ArticleController {
         //todo test!
         String postContent = (String) map.get("postContent");
         String postTitle = (String) map.get("postTitle");
-        int  groupId;
-        long time ;
 
-        try {
-            groupId = (int) map.get("groupId");
-            time = (long) map.get("time");
-        }catch (Exception e){
-            return ResultBean.error(ResultBean.internal_error,"解析异常！");
-        }
         if(postContent == null || postTitle == null)
             return ResultBean.error(ResultBean.resources_not_found,"没有输入文章内容或者文章标题");
 
         //todo 时间
-//        Article post = new Article(userId,groupId,"",postTitle,postContent);
-//        articleRepo.save(post);
-        return ResultBean.success(null);
+        Article post = new Article(userId,1,"2020-01-03",postTitle,postContent,"fucking shit",postContent.length(),0);
+        articleRepo.save(post);
+        return ResultBean.success(post);
     }
 
 
@@ -98,13 +91,22 @@ public class  ArticleController {
     public ResultBean getMyPost(HttpSession httpSession){
         UserSession userSession= (UserSession) httpSession.getAttribute(Constants.USE_SESSION_KEY);
         int userId = userSession.getId();
-        List<Article> myPosts = new LinkedList<>();
-        try{
-            myPosts = articleRepo.findByUserId(userId);
-            return ResultBean.success(myPosts);
-        }catch (Exception e){
-            return ResultBean.error(ResultBean.resources_not_found,"暂无内容");
+
+        List<Article> articles = articleRepo.findByUserId(userId);
+
+        List<ArticleModel> articleModels = new LinkedList<>();
+        for(Article article : articles) {
+            ArticleModel articleModel = new ArticleModel(
+                    article.getTitle(),
+                    article.getContent(),
+                    article.getLink(),
+                    article.getWordCount(),
+                    article.getTime(),
+                    article.getViews()
+            );
+            articleModels.add(articleModel);
         }
+        return ResultBean.success(articleModels);
 
     }
 }

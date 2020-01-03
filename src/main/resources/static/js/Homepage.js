@@ -23,11 +23,9 @@ function homepage(call) {
         type:"GET",
         success:function (result) {
             allData.post = result;
-            console.log("run success"+ result );
         },
         error:function (result) {
             allData.post = result;
-            console.log("run fail" + result );
         },
         complete:function (result) {
             // completeFunction(result);
@@ -41,11 +39,13 @@ function homepage(call) {
 
 function getMyPost(call){
     let allData = {};
+    console.log("执行 get my post");
     let post =$.ajax(({
         url:"post/my_post/",
         type:"GET",
         success:function(result){
-            allData.post = result;
+            allData = result;
+            console.log(result);
         },
         //todo 错误处理
         error:function (result) {

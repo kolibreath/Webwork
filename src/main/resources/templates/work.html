@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" th:src="@{/js/Editor.js}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.1/ace.js" type="text/javascript"></script>
 <head>
@@ -7,10 +8,16 @@
 </head>
 
 <body onload="init()">
+
+<input id="submit" type="button" value="提交" onclick="newPost()" style="width:120px;height:40px;border:2px #9999FF dashed;">
+
 <div id="container">
     <div id="input"></div>
-    <iframe id="target" frameborder="0"></iframe>
+    <iframe id="target" frameborder="0" onclick="newPost()"></iframe>
 </div>
+
+
+
 <style >
     html,
     body {

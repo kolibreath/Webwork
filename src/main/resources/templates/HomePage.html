@@ -11,7 +11,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
@@ -102,6 +101,7 @@
 
                     <div id="home" class="container tab-pane active"><br>
                         <ul style="height: auto" id="post_container">
+
                         </ul>
                     </div>
 
@@ -109,9 +109,13 @@
                         <ul style="height: auto" id="my_post_container">
                         </ul>
                     </div>
+
                     <div id="menu2" class="container tab-pane fade">
+
                         <ul style="height: auto" id="my_star_container">
+
                         </ul>
+
                     </div>
                 </div>
             </div>
@@ -190,8 +194,6 @@
             let workcount = post[i].wordCount;
             let views = post[i].views;
 
-            console.log("标题  内容 连接 时间 字数  阅读量 " + title + " " + content+ " "  + link+ " " + time+ " " + workcount+ " " +views );
-
             _html += "<li>\n" +
                 "    <div class=\"card\" style=\"width: 80%; padding-left: 5px;background-color: #ABABAB\">\n" +
                 "        <div class=\"card-header\"><a href=\"" + link+ "\">"+ title +"</a></div>\n" +
@@ -204,37 +206,36 @@
         }
         $("#post_container").html(_html);
         $("#my_star_container").html(_html);
-
-        console.log(_html);
     });
 
     getMyPost(function (data) {
-        let post = data.data;
-        let length = post.length;
-        let code = data.code;
-        let _html = "";
-        if (code == 404) {
+        if (data.code == 404) {
             $("#my_post_container").html("暂无内容");
         }
         else{
-            for (let i = 0; i < length ; i++) {
-                let title = post[i].title;
-                let content = post[i].content;
-                let link = post[i].link;
-                let time = post[i].time;
-                let workcount = post[i].wordCount;
-                let views = post[i].views;
+            console.log(data.data.length);
+            let _html = "";
+            for (let i = 0; i < data.data.length ; i++) {
+                let title = data.data[i].title;
+                let content =data.data[i].content;
+                let link = data.data[i].link;
+                let time = data.data[i].time;
+                let workcount = data.data[i].wordCount;
+                let views = data.data[i].views;
+                console.log("标题  内容 连接 时间 字数  阅读量 " + title + " " + content+ " "  + link+ " " + time+ " " + workcount+ " " +views );
                 _html += "<li>\n" +
                     "    <div class=\"card\" style=\"width: 80%; padding-left: 5px;background-color: #ABABAB\">\n" +
                     "        <div class=\"card-header\"><a href=\"" + link+ "\">"+ title +"</a></div>\n" +
                     "        <div class=\"card-body\">\n" +
                     "            <p>"+ content +"</p>\n" +
                     "        </div>\n" +
-                    "        <div class=\"card-footer\">" +  time + "         " + "字数    " +  workcount     + "阅读     " + views + "</div>\n" +
+                    "        <div class=\"card-footer\">" +  time + "         " + "字数     " +  workcount     + "阅读     " + views + "</div>\n" +
                     "    </div>\n" +
                     "</li>";
             }
-            $("#my_post_container").html(_html);
+            console.log(_html);
+
+            // $("#my_post_container").html(_html);
         }
     });
 </script>

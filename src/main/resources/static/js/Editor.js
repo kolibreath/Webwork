@@ -2,12 +2,39 @@ function generate() {
     var idoc = document.getElementById('target').contentWindow.document;
 
     idoc.open();
-    //var input = document.getElementById('input');
-    //idoc.write(input.value);
     idoc.write(editor.getValue());
     idoc.close();
 }
 
+function newPost(call){
+    let resultCode ;
+    //time
+    let time= Date.parse( new Date());
+    let postContent = editor.getValue();
+    console.log(postContent);
+    let postTitle = "新文章";
+    let post = {
+        time:time,
+        postContent:postContent,
+        postTitle:postTitle,
+    };
+
+    let createNewPost = $.ajax(({
+        type:"POST",
+        url:"/post/new_post",
+        contentType:"application/json",
+        data:JSON.stringify(post),
+        success:function (result) {
+            resultCode = result;
+        },
+        error:function () {
+            //todo 错误处理
+        }
+    }));
+
+    $.when(createNewPost).done(()=>call(resultCode))
+
+}
 function init() {
     console.log(`function init`)
     /*var input = document.getElementById('input');
